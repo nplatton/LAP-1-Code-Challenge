@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "test": "jest --coverage --watchAll"
+    "test": "jest --silent --watchAll",
+    "coverage": "jest --silent --coverage"
   },
   "devDependencies": {
     "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
     "prettier": "2.5.1",
     "supertest": "^6.2.2"
   },
