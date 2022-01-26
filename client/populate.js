@@ -31,6 +31,11 @@ const makeTitle = (title, link) => {
 const makeBody = (body) => {
   const articleBody = document.createElement('p');
   articleBody.classList.add('article_body');
+  const bodyLength = body.length;
+  if (bodyLength > 195) {
+    console.log(typeof body);
+    body = body.slice(0, 195).concat('...');
+  }
   articleBody.innerText = body;
 
   return articleBody;
