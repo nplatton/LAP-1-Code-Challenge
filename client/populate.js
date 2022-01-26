@@ -87,3 +87,12 @@ const populatePage = (results) => {
 };
 
 populatePage(results);
+
+// todo inc e
+const fetchResults = async () => {
+  // e.preventDefault();
+  // todo change to button click
+  const search = 'harry-potter';
+  let response = await fetch(`http://localhost:3000/graham/${search}`);
+  let url = await response.text();
+};
