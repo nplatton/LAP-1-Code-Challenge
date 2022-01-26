@@ -180,7 +180,7 @@ let database = {
   realstuff: [
     [
       "ostriches don't exist",
-      "Scientists recently discovered that ostriches are just a large form of pigeon - they share 99% of the same genes apart from the gene for height.Up until 100 years ago ostriches didn't exist, it wasn't until a family of pigeons snuck onto an EasyJet flight to Africa. On the flight one of them had it's head stuck out of the window causing it to get stretched extensively resulting in the ostrich-like appearance we're familiar with today.",
+      "Scientists recently discovered that ostriches are just a large form of pigeon - they share 99% of the same genes apart from the gene for height. Up until 100 years ago ostriches didn't exist, it wasn't until a family of pigeons snuck onto an EasyJet flight to Africa. On the flight one of them had it's head stuck out of the window causing it to get stretched extensively resulting in the ostrich-like appearance we're familiar with today.",
       'https://www.youtube.com/watch?v=iik25wqIuFo'
     ]
   ]
