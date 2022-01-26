@@ -30,7 +30,7 @@
 
 #### Testing
 
-- `cd ..` then run `npm test` to launch the test suite.
+- while in `LAP-1-CODE-CHALLENGE` run `npm test` to launch the test suite.
 
 ## Screenshot
 
@@ -66,7 +66,7 @@
 
 ### Server
 
-#### grahamRoutes.jhs
+#### grahamRoutes.js
 
 - create graham routes
 - updated get requests to accept different paths
