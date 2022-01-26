@@ -21,7 +21,7 @@ let results = [
   ],
   [
     'bannana',
-    'Pellentesque odio odio, venenatis in nibh in, iaculis sodales ipsum. Ut vel rutrum dolor. Integer dignissim turpis at velit sodales convallis. Vivamus venenatis ligula ullamcorper vulputate viverra. Donec ultrices eros eros, sed viverra orci interdum eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet elit auctor, convallis velit ut, luctus arcu.  ',
+    'Pellentesque odio odio, venenatis in nibh in, iaculis sodales ipsum. Ut vel rutrum dolor. Integer dignissim turpis at velit sodales convallis. Vivamus venenatis ligula ullamcorper vulputate viverra. Donec ultrices eros eros, sed viverra orci interdum eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet elit auctor, convallis velit ut, luctus arcu.',
     'https://giphy.com/explore/cat',
   ],
 ];
@@ -94,5 +94,6 @@ const fetchResults = async () => {
   // todo change to button click
   const search = 'harry-potter';
   let response = await fetch(`http://localhost:3000/graham/${search}`);
-  let url = await response.text();
+  let url = await response.json();
+  let results = await fetch(url);
 };
