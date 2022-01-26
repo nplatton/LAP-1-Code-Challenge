@@ -1,7 +1,5 @@
 {
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
     "test": "jest --silent --watchAll",
     "coverage": "jest --silent --coverage"
   },
