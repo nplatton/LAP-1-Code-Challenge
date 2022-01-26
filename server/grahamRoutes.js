@@ -7,24 +7,27 @@ router.get('/', (req, res) => {
   res.json('Welcome to Graham!');
 });
 
+// Get data based on the animal specified in the search - returns in json format
 router.get('/:animal', (req, res) => {
-  try {
-    let animal = req.params.animal;
-    let returnData = database[animal]
-    if (!returnData) {
-      let rabbitData = database.rabbit;
-      res.json(rabbitData);
-    }
-    if (animal=='rabbit') {
-      let ostrichData = database.ostrich;
-      res.json(ostrichData);
-    }
-    if (animal=='ostrich') {
-      let actualOstrichData = database.realstuff;
-      res.json(actualOstrichData);
-    }
-    res.json(returnData)
-  } catch (err) { res.status(404).json(err.message) }
+  // We don't need error handling on this side as it has been dealt with on the client end
+  let animal = req.params.animal;
+  let returnData = dataChooser(animal);
+  res.json(returnData)
 });
 
-module.exports = router;
+// For clarity on the workings of this function see the test suite
+function dataChooser(animal) {
+  let data = database[animal];
+  if (!data) {
+    data = database.rabbit;
+  }
+  if (animal=='rabbit') {
+    data = database.ostrich;
+  }
+  if (animal=='ostrich') {
+    data = database.realstuff;
+  }
+  return data
+}
+
+module.exports = { router, dataChooser };

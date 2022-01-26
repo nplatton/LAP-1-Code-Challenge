@@ -5,19 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "jest --watchAll",
-    "coverage": "jest --silent --coverage"
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2"
-  },
-  "devDependencies": {
-    "jest": "^27.4.7",
-    "jest-fetch-mock": "^3.0.3",
-    "supertest": "^6.2.2"
   }
 }
