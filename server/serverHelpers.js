@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 function pageFetcher(url) {
   fetch(url)
       .then(r => r.text)
