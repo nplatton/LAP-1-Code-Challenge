@@ -10,16 +10,23 @@ let app;
 
 describe('helpers', () => {
 
+  beforeEach(() => {
+    app = require('../serverHelpers')
+  })
+
   afterEach(() => {
     fetch.resetMocks();
   })
 
   describe('pageFetcher', () => {
-    test()
+    test('test', () => {
+      let result = app.pageFetcher('https://www.google.co.uk/search?q=rabbits');
+      console.log(result)
+    })
   })
 
-  describe('arrayCreator', () => {
+  // describe('arrayCreator', () => {
 
-  })
+  // })
 
 })

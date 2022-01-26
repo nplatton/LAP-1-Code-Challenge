@@ -6,14 +6,15 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "jest --silent --watchAll",
+    "test": "jest --watchAll",
     "coverage": "jest --silent --coverage"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "node-fetch": "^3.2.0"
   },
   "devDependencies": {
     "jest": "^27.4.7",
