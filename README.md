@@ -63,6 +63,7 @@
 - isolate search words
 - add search functionality
 - cleanup and comment
+- fix empty search
 
 ### Server
 
