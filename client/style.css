@@ -39,6 +39,7 @@ form {
 }
 .form_child {
   padding: 1em 2em;
+  font-family: inherit;
 }
 .search_btns {
   display: flex;
@@ -53,7 +54,7 @@ form {
 }
 
 .btn {
-  width: 49%;
+  width: 45%;
   max-width: 175px;
   border: none;
   border-radius: 10px;
@@ -64,7 +65,27 @@ form {
   height: 20px;
   object-fit: cover;
   position: relative;
-  bottom: 40px;
+  bottom: 43px;
   left: 12px;
   opacity: 0.6;
+}
+
+/* Formatting results */
+.results_cont {
+  margin: 2em 10%;
+}
+
+.article_body {
+  max-width: 65ch;
+  margin-top: 0;
+}
+.article_title {
+  margin-bottom: 0;
+}
+.article_link {
+  color: #904e95;
+  text-decoration: none;
+}
+.article_link:visited {
+  color: #e96443;
 }
