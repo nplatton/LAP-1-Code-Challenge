@@ -46,14 +46,25 @@ form {
 }
 #search_val {
   width: 100%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   border-radius: 20px;
   border: 2px solid lightgray;
+  padding-left: 2.25rem;
 }
 
 .btn {
   width: 49%;
   max-width: 175px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.mag_logo {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  position: relative;
+  bottom: 40px;
+  left: 12px;
+  opacity: 0.6;
 }
