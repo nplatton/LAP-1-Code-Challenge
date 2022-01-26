@@ -8,15 +8,15 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:animal', (req, res) => {
-    let obj = [];
     try {
         let animal = req.params.animal
         let formatted = animal.split(/[\W_]/g).join('%20')
         let url = `https://www.google.co.uk/search?q=${formatted}`
 
-        response = pageFetcher()
+        // response = pageFetcher(url)
+        // res.json(response)
 
-        res.json(response)
+        res.json(url)
     } catch(err) {
         res.status(404).json(err.message)
     }
