@@ -26,11 +26,11 @@
 
 - Run `npm start` to launch the server.
 - Open `index.html` from the `client` folder.
-- Enter a search request and hit one of the buttons
+- Enter a search request and hit one of the buttons.
 
 #### Testing
 
-- while in `LAP-1-CODE-CHALLENGE` run `npm test` to launch the test suite.
+- While in `LAP-1-CODE-CHALLENGE` run `npm test` to launch the test suite.
 
 ## Screenshot
 
@@ -63,6 +63,7 @@
 - isolate search words
 - add search functionality
 - cleanup and comment
+- fix empty search
 
 ### Server
 
