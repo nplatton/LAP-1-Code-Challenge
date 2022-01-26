@@ -14,5 +14,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "jest-fetch-mock": "^3.0.3",
+    "supertest": "^6.2.2"
   }
 }
