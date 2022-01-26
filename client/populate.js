@@ -114,3 +114,5 @@ const searchBtns = document.querySelectorAll('.btn');
 searchBtns.forEach((searchBtn) => {
   searchBtn.addEventListener('click', handleSearch);
 });
+
+module.exports = { capitalizeWord, capitalizeSentence };
