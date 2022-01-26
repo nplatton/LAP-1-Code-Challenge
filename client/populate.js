@@ -1,31 +1,3 @@
-let results = [
-  [
-    'a cool title',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam iaculis quis lorem a consectetur. In ex erat, suscipit at placerat sit amet, lobortis et diam. Curabitur auctor arcu et lorem euismod, vel elementum ante tristique. Etiam placerat neque suscipit rhoncus fringilla. In ullamcorper suscipit velit, ut lobortis mauris rhoncus sed. Praesent rhoncus bibendum auctor. Proin molestie ligula augue, eget vestibulum nunc congue ut. Mauris at dui vel tortor pellentesque varius tincidunt vitae tellus. ',
-    'https://giphy.com/explore/cat',
-  ],
-  [
-    'a second title',
-    'Vestibulum id mi sit amet ligula iaculis elementum et et est. Pellentesque sit amet efficitur neque. Vivamus in elit pellentesque, gravida augue ac, efficitur nunc. Integer bibendum, mi et porta ultricies, purus sapien sollicitudin velit, vel sodales mi arcu vel sapien. Pellentesque suscipit felis nec commodo luctus. Ut ut blandit arcu, vel pellentesque purus. Vestibulum quis metus venenatis, bibendum augue id, fringilla nunc. Donec at purus at est rutrum malesuada a non lectus. Aenean id sem id metus aliquam pulvinar. Cras porta lectus eu maximus laoreet. ',
-    'https://giphy.com/explore/cat',
-  ],
-  [
-    'a not cool title',
-    ' Aliquam dignissim scelerisque lectus, sed vestibulum tortor auctor id. Sed nec quam in nibh aliquam tincidunt quis eu magna. Morbi sit amet cursus libero. Sed velit neque, posuere eu dui quis, dapibus varius risus. Phasellus a nisi vel erat condimentum rhoncus. Maecenas consectetur nisl in rhoncus ultrices. Cras quis arcu sagittis, rhoncus elit non, elementum est. ',
-    'https://giphy.com/explore/cat',
-  ],
-  [
-    'just a  title',
-    'Vestibulum ullamcorper metus orci, lobortis lacinia est suscipit molestie. Nam bibendum eleifend ex, at elementum est porttitor vitae. Vestibulum at venenatis ligula. Donec id erat condimentum, maximus erat scelerisque, vehicula metus. Nunc sit amet vestibulum urna. Curabitur rutrum ac urna non tempor. Vivamus volutpat orci tellus, id elementum libero laoreet sit amet. Integer consequat nulla tempor augue auctor consectetur. ',
-    'https://giphy.com/explore/cat',
-  ],
-  [
-    'bannana',
-    'Pellentesque odio odio, venenatis in nibh in, iaculis sodales ipsum. Ut vel rutrum dolor. Integer dignissim turpis at velit sodales convallis. Vivamus venenatis ligula ullamcorper vulputate viverra. Donec ultrices eros eros, sed viverra orci interdum eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet elit auctor, convallis velit ut, luctus arcu.',
-    'https://giphy.com/explore/cat',
-  ],
-];
-
 // Helper functions
 // Capitalize one word
 const capitalizeWord = (word) => {
@@ -74,7 +46,8 @@ const makeArticle = (title, body, link) => {
 };
 
 const populatePage = (results) => {
-  const target = document.querySelector('.wrapper');
+  const target = document.querySelector('#results');
+  target.innerHTML = '';
   const container = document.createElement('div');
   container.classList.add('results_cont');
   for (let result of results) {
@@ -86,7 +59,13 @@ const populatePage = (results) => {
   target.appendChild(container);
 };
 
-populatePage(results);
+function getRandomLink(arr) {
+  const target = document.querySelector('#results');
+  target.innerHTML = '';
+  const randNum = Math.floor(Math.random() * arr.length);
+  const randomArticle = arr[randNum];
+  window.open(randomArticle[2], '_blank');
+}
 
 const handleSearch = async (e) => {
   e.preventDefault();
@@ -94,11 +73,20 @@ const handleSearch = async (e) => {
   const searchBox = document.querySelector('#search_val');
   const searchValue = searchBox.value;
   const matchArr = searchValue.match(/cat|dog|rabbit|ostrich/i);
-  const matchWord = matchArr[0].toLowerCase();
-  // if (!matchWord) {
-  //   let response = await fetch(`http://localhost:3000/graham/${matchWord}`);
-
-  // }
+  let response;
+  if (matchArr) {
+    const matchWord = matchArr[0].toLowerCase();
+    response = await (
+      await fetch(`http://localhost:3000/graham/${matchWord}`)
+    ).json();
+    populatePage(response);
+  } else {
+    response = await (
+      await fetch(`http://localhost:3000/graham/lksdfk`)
+    ).json();
+  }
+  if (btn == 'submit_btn') populatePage(response);
+  if (btn == 'random_btn') getRandomLink(response);
 };
 
 const searchBtns = document.querySelectorAll('.btn');
