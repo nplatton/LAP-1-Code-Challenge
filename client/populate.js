@@ -88,12 +88,20 @@ const populatePage = (results) => {
 
 populatePage(results);
 
-// todo inc e
-const fetchResults = async () => {
-  // e.preventDefault();
-  // todo change to button click
-  const search = 'harry-potter';
-  let response = await fetch(`http://localhost:3000/graham/${search}`);
-  let url = await response.json();
-  let results = await fetch(url);
+const handleSearch = async (e) => {
+  e.preventDefault();
+  const btn = e.target.id;
+  const searchBox = document.querySelector('#search_val');
+  const searchValue = searchBox.value;
+  const matchArr = searchValue.match(/cat|dog|rabbit|ostrich/i);
+  const matchWord = matchArr[0].toLowerCase();
+  // if (!matchWord) {
+  //   let response = await fetch(`http://localhost:3000/graham/${matchWord}`);
+
+  // }
 };
+
+const searchBtns = document.querySelectorAll('.btn');
+searchBtns.forEach((searchBtn) => {
+  searchBtn.addEventListener('click', handleSearch);
+});
