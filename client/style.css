@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 5rem;
+  background-image: linear-gradient(45deg, #e96443, #904e95);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  margin-bottom: 0.25em;
+}
+form {
+  width: 50%;
+  min-width: 350px;
+  max-width: 600px;
+}
+.form_child {
+  padding: 1em 2em;
+}
+.search_btns {
+  display: flex;
+  justify-content: space-between;
+}
+#search_val {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  width: 49%;
+}
