@@ -50,11 +50,6 @@ let database = {
       "Your cat's online owners manual, featuring articles about breed information, cat selection, training, grooming and care for cats and kittens.",
       'http://www.vetstreet.com/cats/',
     ],
-    [
-      'Adopt a Cat | Blue Cross',
-      'Meet the cats and kittens currently waiting to be adopted. You can find out more by clicking on their profile. We’ll explain what they’re like and what they might need from a new home. If you think you could offer a cat the love they deserve, fill in an application form to express your interest.',
-      'https://www.bluecross.org.uk/rehome/cat',
-    ],
   ],
   dog: [
     [
@@ -180,10 +175,10 @@ let database = {
   realstuff: [
     [
       "ostriches don't exist",
-      "Scientists recently discovered that ostriches are just a large form of pigeon - they share 99% of the same genes apart from the gene for height. Up until 100 years ago ostriches didn't exist, it wasn't until a family of pigeons snuck onto an EasyJet flight to Africa. On the flight one of them had it's head stuck out of the window causing it to get stretched extensively resulting in the ostrich-like appearance we're familiar with today.",
-      'https://www.youtube.com/watch?v=iik25wqIuFo'
-    ]
-  ]
+      "Scientists recently discovered that ostriches are just a large form of pigeon. Up until 100 years ago ostriches didn't exist, it wasn't until a family of pigeons snuck onto an EasyJet flight to Africa. On the flight one of them had it's head stuck out of the window causing it to get stretched extensively resulting in the ostrich-like appearance we're familiar with today.",
+      'https://www.youtube.com/watch?v=iik25wqIuFo',
+    ],
+  ],
 };
 
 module.exports = database;

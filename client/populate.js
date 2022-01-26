@@ -31,6 +31,11 @@ const makeTitle = (title, link) => {
 const makeBody = (body) => {
   const articleBody = document.createElement('p');
   articleBody.classList.add('article_body');
+  const bodyLength = body.length;
+  if (bodyLength > 195) {
+    console.log(typeof body);
+    body = body.slice(0, 195).concat('...');
+  }
   articleBody.innerText = body;
 
   return articleBody;
@@ -74,9 +79,14 @@ function getRandomLink(arr) {
 const handleSearch = async (e) => {
   // prevent page from resetting
   e.preventDefault();
+  const target = document.querySelector('#results');
+  target.innerHTML = '';
   const btn = e.target.id;
   const searchBox = document.querySelector('#search_val');
   const searchValue = searchBox.value;
+  if (!searchValue) {
+    return;
+  }
   // find the first match
   const matchArr = searchValue.match(/cat|dog|rabbit|ostrich/i);
   let response;
