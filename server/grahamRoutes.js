@@ -15,6 +15,7 @@ router.get('/:animal', (req, res) => {
   res.json(returnData)
 });
 
+// For clarity on the workings of this function see the test suite
 function dataChooser(animal) {
   let data = database[animal];
   if (!data) {
@@ -29,4 +30,4 @@ function dataChooser(animal) {
   return data
 }
 
-module.exports = router;
+module.exports = { router, dataChooser };

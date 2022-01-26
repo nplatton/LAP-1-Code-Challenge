@@ -5,11 +5,13 @@ const cors = require('cors')
 app.use(cors());
 app.use(express.json());
 
+// Used empty route for testing
 app.get('/', (req, res) => {
   res.json({});
 })
 
-const grahamRoutes = require('./grahamRoutes')
-app.use('/graham', grahamRoutes);
+// Add the route to the server
+const { router } = require('./grahamRoutes')
+app.use('/graham', router);
 
 module.exports = { app };
