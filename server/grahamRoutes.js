@@ -1,4 +1,4 @@
-const { pageFetcher } = require('./serverHelpers')
+let database = require('./data')
 
 const express = require('express')
 const router = express.Router()
@@ -9,16 +9,10 @@ router.get('/', (req, res) => {
 
 router.get('/:animal', (req, res) => {
     try {
-        let animal = req.params.animal
-        let formatted = animal.split(/[\W_]/g).join('%20')
-        let url = `https://www.google.co.uk/search?q=${formatted}`
+      let animal = req.params.animal;
 
-        // response = pageFetcher(url)
-        // res.json(response)
-
-        res.json(url)
     } catch(err) {
-        res.status(404).json(err.message)
+
     }
 })
 
