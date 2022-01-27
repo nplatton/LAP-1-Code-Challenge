@@ -4,7 +4,7 @@
 
 const { capitalizeWord, capitalizeSentence } = require('../client/populate')
 
-decribe('populate.js', () => {
+describe('populate.js', () => {
 
     describe('helper functions', () => {
 
