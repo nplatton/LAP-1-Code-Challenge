@@ -28,6 +28,13 @@
 - Open `index.html` from the `client` folder.
 - Enter a search request and hit one of the buttons.
 
+#### Search Terms
+
+- 'cat' and 'dog' return ten results about cats and dogs respectively,
+- any animals we don't know about returns ten results about rabbits,
+- 'rabbit' returns three results about ostriches,
+- 'ostrich' returns a conspiracy theory.
+
 #### Testing
 
 - While in `LAP-1-CODE-CHALLENGE` run `npm test` to launch the test suite.
