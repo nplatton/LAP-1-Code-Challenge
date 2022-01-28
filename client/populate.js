@@ -33,7 +33,6 @@ const makeBody = (body) => {
   articleBody.classList.add('article_body');
   const bodyLength = body.length;
   if (bodyLength > 195) {
-    console.log(typeof body);
     body = body.slice(0, 195).concat('...');
   }
   articleBody.innerText = body;
@@ -79,8 +78,10 @@ function getRandomLink(arr) {
 const handleSearch = async (e) => {
   // prevent page from resetting
   e.preventDefault();
-  const target = document.querySelector('#results');
-  target.innerHTML = '';
+  const resultsBlock = document.querySelector('#results');
+  resultsBlock.innerHTML = '';
+  console.log(e.target)
+  console.log(typeof e.target)
   const btn = e.target.id;
   const searchBox = document.querySelector('#search_val');
   const searchValue = searchBox.value;
@@ -115,4 +116,13 @@ searchBtns.forEach((searchBtn) => {
   searchBtn.addEventListener('click', handleSearch);
 });
 
-module.exports = { capitalizeWord, capitalizeSentence };
+module.exports = { 
+  capitalizeWord, 
+  capitalizeSentence, 
+  makeTitle,
+  makeBody,
+  makeArticle,
+  populatePage,
+  getRandomLink,
+  handleSearch
+};
